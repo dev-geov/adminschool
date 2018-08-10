@@ -13,7 +13,10 @@
     </div>
     <div class="form-group">
         <%= f.label "Curso" %>
-        <%= f.select :course_id, options_for_select(Course.all.map{|c|[c.title, c.id]}) ,{}, class: "form-control" %>
+        <%= f.text_field :course_title, value: @course.title, :disabled => true, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.hidden_field :course_id, value: @course.id,  class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label "Professor" %>

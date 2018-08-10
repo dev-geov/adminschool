@@ -20,6 +20,6 @@
         </table>
     </div>
     <div class="card-footer">
-        <%= link_to 'Adicionar', new_discipline_path, class: "btn btn-primary" %>
+        <%= link_to 'Adicionar', new_discipline_path(:course => params[:course]), class: "btn btn-primary" %>
     </div>
 </div>

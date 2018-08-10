@@ -3,7 +3,7 @@
         <h3><%= @professor.name %></h3>
     </div>
     <div class="card-body">
-        <p><Strong>Nascimento: </Strong><%= @professor.birth %></p>
+        <p><Strong>Nascimento: </Strong><%= date_ptbr(@professor.birth) %></p>
         <p><strong>Sexo: </strong><%= @professor.sex == 'M' ? 'Masculino' : 'Feminino' %></p>
     </div>
     <div class="card-footer">

@@ -14,7 +14,7 @@
                     <td>
                         <%= link_to professor.name, professor %>
                     </td>
-                    <td><%= professor.birth %></td>
+                    <td><%= date_ptbr(professor.birth) %></td>
                     <td><%= professor.sex == 'M' ? 'Masculino' : 'Feminino' %></td>
                 </tr>
             <% end %>

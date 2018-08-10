@@ -7,7 +7,10 @@
         <p><strong>Sexo: </strong><%= @student.sex == 'M' ? 'Masculino' : 'Feminino' %></p>
     </div>
     <div class="card-footer">
-        <%= link_to "Inscrição", new_enrollment_path(:student => @student.fullname), class: "btn btn-warning" %>
+        <% if !is_enrolled(@student) %>
+          <%= link_to "Inscrição", new_enrollment_path(:student => @student.fullname),
+            class: "btn btn-warning" %>
+        <% end %>
         <%= link_to "Editar", edit_student_path, class: "btn btn-info" %>
         <%= link_to "Voltar", students_path, class: "btn btn-info" %>
         <%= link_to "Deletar", student_path, method: :delete, data: { confirm: "Deletar?"}, class: "btn btn-danger" %>

@@ -1,8 +1,16 @@
 class DisciplinesController < ApplicationController
 
   def index
-    @disciplines = Discipline.all
     @title = 'Disciplinas'
+    if params[:course]
+      @course = Course.find_by(title: params[:course])
+      @disciplines = Discipline.where(course: @course)
+    elsif params[:professor]
+      @professor = Professor.find_by(name: params[:professor])
+      @disciplines = Discipline.where(professor: @professor)
+    else
+      @disciplines = Discipline.all
+    end
   end
 
   def show
@@ -11,6 +19,7 @@ class DisciplinesController < ApplicationController
   end
 
   def new
+    @course = Course.find_by(title: params[:course])
     @discipline = Discipline.new
     @title = 'Nova disciplina'
   end

@@ -18,6 +18,12 @@ class EnrollmentsController < ApplicationController
     end
   end
 
+  def destroy
+    @enrollment = Enrollment.find(params[:id])
+    @enrollment.destroy
+    redirect_to enrollments_path
+  end
+
   private
   def enrollment_params
     params.require(:enrollment).permit(:course_id, :student_id)

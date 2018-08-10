@@ -6,20 +6,24 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Estudante</th><th>Curso</th>
+                    <th>Estudante</th><th>Curso</th><th>Opções</th>
                 </tr>
             </thead>
             <% @enrollments.each do |enrollment| %>
                 <tr>
                     <td>
-                        <%= enrollment.student.fullname %>
+                      <%= enrollment.student.fullname %>
                     </td>
                     <td><%= enrollment.course.title %></td>
+                    <td>
+                      <%= link_to 'Deletar', enrollment_path(enrollment), method: :delete,
+                      data: { confirm: "Deletar?"}, class: "btn btn-danger" %>
+                    </td>
                 </tr>
             <% end %>
         </table>
     </div>
     <div class="card-footer">
-        
+
     </div>
 </div>
