@@ -1,0 +1,14 @@
+<div class="card bg-default">
+    <div class="card-header">
+        <h3><%= @course.title %></h3>
+    </div>
+    <div class="card-body">
+        <p><Strong>Duração: </Strong><%= @course.duration %></p>
+        <p><strong>Ativo: </strong><%= @course.active %></p>
+    </div>
+    <div class="card-footer">
+        <%= link_to "Editar", edit_course_path, class: "btn btn-info" %>
+        <%= link_to "Voltar", courses_path, class: "btn btn-info" %>
+        <%= link_to "Deletar", course_path, method: :delete, data: { confirm: "Deletar?"}, class: "btn btn-danger" %>
+    </div>
+</div>

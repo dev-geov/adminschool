@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header bg-default">
+        <div><h2>Estudantes</h2></div>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th><th>Data nascimento</th><th>Sexo</th>
+                </tr>
+            </thead>
+            <% @students.each do |student| %>
+                <tr>
+                    <td>
+                        <%= link_to student.fullname, student %>
+                    </td>
+                    <td><%= student.birth %></td>
+                    <td><%= student.sex %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+    <div class="card-footer">
+        <%= link_to 'Adicionar', new_student_path, class: "btn btn-primary" %>
+    </div>
+</div>
+

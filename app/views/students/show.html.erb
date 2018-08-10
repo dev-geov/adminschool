@@ -1,0 +1,14 @@
+<div class="card bg-default">
+    <div class="card-header">
+        <h3><%= @student.fullname %></h3>
+    </div>
+    <div class="card-body">
+        <p><Strong>Nascimento: </Strong><%= @student.birth %></p>
+        <p><strong>Sexo: </strong><%= @student.sex %></p>
+    </div>
+    <div class="card-footer">
+        <%= link_to "Editar", edit_student_path, class: "btn btn-info" %>
+        <%= link_to "Voltar", students_path, class: "btn btn-info" %>
+        <%= link_to "Deletar", student_path, method: :delete, data: { confirm: "Deletar?"}, class: "btn btn-danger" %>
+    </div>
+</div>

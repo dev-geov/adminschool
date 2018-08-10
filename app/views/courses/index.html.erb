@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header bg-default">
+        <h2>Cursos</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Título</th><th>Duração</th><th>Ativo</th>
+                </tr>
+            </thead>
+            <% @courses.each do |course| %>
+                <tr>
+                    <td>
+                        <%= link_to course.title, course %>
+                    </td>
+                    <td><%= course.duration %></td>
+                    <td>
+                        <%= course.active ? 'Sim' : 'Não' %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+    <div class="card-footer">
+        <%= link_to 'Adicionar', new_course_path, class: 'btn btn-primary' %>
+    </div>
+</div>
+
