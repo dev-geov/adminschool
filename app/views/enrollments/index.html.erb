@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header bg-default">
+        <h2>Inscrições</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Estudante</th><th>Curso</th>
+                </tr>
+            </thead>
+            <% @enrollments.each do |enrollment| %>
+                <tr>
+                    <td>
+                        <%= enrollment.student.fullname %>
+                    </td>
+                    <td><%= enrollment.course.title %></td>
+                </tr>
+            <% end %>
+        </table>
+    </div>
+    <div class="card-footer">
+        
+    </div>
+</div>

@@ -1,7 +1,7 @@
-<%= form_for @student, html: {class: "form"} do |f| %>
+<%= form_for @professor, html: {class: "form"} do |f| %>
     <div class="form-group">
         <%= f.label "Nome" %>
-        <%= f.text_field :fullname, class: "form-control" %>
+        <%= f.text_field :name, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.label "Data Nascimento" %>
@@ -9,10 +9,11 @@
     </div>
     <div class="form-group">
         <%= f.label "Sexo" %>
-        <%= f.select :sex,[['Escolha', nil],['Masculino', 'M'], ['Feminino', 'F']], class: "form-control" %>
+        <%= f.select :sex,[['Escolha', nil],['Masculino', 'M'], ['Feminino', 'F']],{}, 
+        {class: "form-control"} %>
     </div>
     <div class="form-group">
         <%= f.submit "Salvar", class: "btn btn-primary" %>
-        <%= link_to "Voltar", students_path, class: "btn btn-primary" %>
+        <%= link_to "Voltar", professors_path, class: "btn btn-primary" %>
     </div>
 <% end %>

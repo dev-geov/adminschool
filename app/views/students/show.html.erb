@@ -3,10 +3,11 @@
         <h3><%= @student.fullname %></h3>
     </div>
     <div class="card-body">
-        <p><Strong>Nascimento: </Strong><%= @student.birth %></p>
-        <p><strong>Sexo: </strong><%= @student.sex %></p>
+        <p><Strong>Nascimento: </Strong><%= date_ptbr(@student.birth) %></p>
+        <p><strong>Sexo: </strong><%= @student.sex == 'M' ? 'Masculino' : 'Feminino' %></p>
     </div>
     <div class="card-footer">
+        <%= link_to "Inscrição", new_enrollment_path(:student => @student.fullname), class: "btn btn-warning" %>
         <%= link_to "Editar", edit_student_path, class: "btn btn-info" %>
         <%= link_to "Voltar", students_path, class: "btn btn-info" %>
         <%= link_to "Deletar", student_path, method: :delete, data: { confirm: "Deletar?"}, class: "btn btn-danger" %>
